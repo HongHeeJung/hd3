@@ -14,11 +14,26 @@ public:
 	{
 		buff = new int[size];
 	}
+	// 생성자에서 자원할당한 경우 
+	// 소멸자를 만들어서 자원 해지 해야 합니다.
+	~Vector()
+	{
+		delete[] buff;
+	}
+	void setAt(int idx, int value) { buff[idx] = value;	}
+	int getAt(int idx)    	       { return buff[idx];	}
 };
 int main()
 {
 	Vector v(5);
+
+	v.setAt(0, 10);
+
+	int n = v.getAt(0);
+	
+	std::cout << n << std::endl;
 }
+
 
 
 
