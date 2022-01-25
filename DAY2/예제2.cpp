@@ -26,11 +26,8 @@ int main()
 			memcpy(temp, buff, sizeof(int) * size);
 
 			delete[] buff;
-
 			buff = temp;
-
 			size = size + 5;
-			
 		}
 	}
 	std::cout << "입력된 갯수 : " << count << std::endl;
@@ -41,7 +38,7 @@ int main()
 	delete[] buff;
 }
 
-
+// 4:10 분에 이어집니다.
 
 
 
