@@ -29,3 +29,8 @@ int main()
 								// 142 아래부분
 
 }
+
+struct Node
+{
+	Node* next;
+};
