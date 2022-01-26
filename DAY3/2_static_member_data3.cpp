@@ -1,9 +1,9 @@
-// 2_static_member_data1
-
 #include <iostream>
 
-// 방법 3. 
+// 방법 3. static member data(정적멤버데이타)
 
+// 클래스당 한개씩 사용하는 전역변수로 볼수 있습니다.
+// 접근지정자를 사용가능한 전역변수
 
 
 class Car
