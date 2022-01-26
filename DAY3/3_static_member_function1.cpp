@@ -26,7 +26,8 @@ int main()
 	Car c1;
 	Car c2;
 
-	std::cout << Car::get_count() << std::endl;
+	// static 멤버 함수 는 2가지 방법으로 사용가능합니다.
+	std::cout << Car::get_count() << std::endl; // <<= 권장
 	std::cout << c1.get_count()   << std::endl;
 
 }
