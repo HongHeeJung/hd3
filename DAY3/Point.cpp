@@ -12,3 +12,6 @@ void Point::set(int a, int b)
 	x = a;
 	y = b;
 }
+
+
+// 13:00 부터 시작 합니다.
