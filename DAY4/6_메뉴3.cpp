@@ -32,31 +32,38 @@ public:
 	// 팝업메뉴를 선택할때.. - 이 예제의 핵심
 	void command()
 	{
-		system("cls"); // 화면 지우기
-
-		int sz = v.size(); // 하위 메뉴 갯수
-
-		for (int i = 0; i < sz; i++)
+		while (1)
 		{
-			std::cout << i + 1 << ". " << v[i]->getTitle() << std::endl;
+			system("cls"); // 화면 지우기
+
+			int sz = v.size(); // 하위 메뉴 갯수
+
+			for (int i = 0; i < sz; i++)
+			{
+				std::cout << i + 1 << ". " << v[i]->getTitle() << std::endl;
+			}
+			std::cout << sz + 1 << ". 종료" << std::endl;
+
+			std::cout << "메뉴를 선택해 주세요 >>";
+			int cmd;
+			std::cin >> cmd;
+
+			if (cmd < 1 || cmd > sz + 1) // 잘못된 입력
+				continue;
+
+
+			if (cmd == sz + 1) // 종료 메뉴 선택시
+				break;         // 또는 return 
+
+
+
+
+
+			// 선택된 메뉴를 실행하려면 ?? 
+			v[cmd - 1]->command();
 		}
-
-		std::cout << sz + 1 << ". 종료" << std::endl;
-
-		std::cout << "메뉴를 선택해 주세요 >>";
-		int cmd;
-		std::cin >> cmd;
-
-		// 선택된 메뉴를 실행하려면 ?? 
 	}
 };
-
-
-
-
-
-
-
 int main()
 {
 	MenuItem m1("색상변경", 11);
@@ -65,6 +72,5 @@ int main()
 	PopupMenu pm("카메라메뉴");
 	pm.addMenu(&m1);
 	pm.addMenu(&m2);
-
 	pm.command(); // 팝업메뉴 선택.
 }
