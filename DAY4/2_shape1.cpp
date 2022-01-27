@@ -14,7 +14,15 @@
 
 class Shape
 {
+	int color;
 public:
+	// 아래 멤버 함수는 "virtual"이 될 필요 있을까요 ?
+	void setColor(int c) { color = c; }
+
+	// 면적을 구하는 것은 도형 마다 다릅니다. 재정의 되어야 합니다.
+	// virtual 이 되어야 합니다
+	virtual double getArea() const { return 0; }
+
 	virtual void draw() { std::cout << "Draw Shape" << std::endl; }
 };
 class Rect : public Shape
