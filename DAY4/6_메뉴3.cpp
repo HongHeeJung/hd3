@@ -66,11 +66,16 @@ public:
 };
 int main()
 {
+	// 사용법
+	// 1. 메뉴갯수 만큼의 객체를 만드세요
 	MenuItem m1("색상변경", 11);
 	MenuItem m2("옵션", 12);
 	
+	// 2. 팝업메뉴에 메뉴 객체를 넣으세요
 	PopupMenu pm("카메라메뉴");
 	pm.addMenu(&m1);
 	pm.addMenu(&m2);
+
+	// 3. 팝업메뉴를 선택(command 호출) 하세요
 	pm.command(); // 팝업메뉴 선택.
 }
