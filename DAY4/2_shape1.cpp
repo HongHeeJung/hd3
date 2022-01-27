@@ -4,8 +4,15 @@
 
 // 1. 모든 도형을 타입화 하면 편리하다
 // 2. 모든 도형의 공통의 기반 클래스가 있다면 묶어 관리 할수 있다.
+
+// 3. 모든 도형의 공통의 특징(draw) 는 반드시 기반 클래스에도 있어야 한다.
+//    그래야, 기반 클래스 타입으로 묶어서 사용할때
+//    해당 특징을 사용할수 있다.
+
 class Shape
 {
+public:
+	void draw() { std::cout << "Draw Shape" << std::endl; }
 };
 class Rect : public Shape
 {
@@ -28,7 +35,8 @@ int main()
 
 		if (cmd == 1)
 		{
-			Shape* p = new Rect;
+			// Rect r;   이렇게 만들면 {} 벗어날때 바로 파괴 입니다.
+			Shape* p = new Rect; // 이렇게 해야 파괴되지 않습니다.
 			v.push_back(p);
 		}
 		else if (cmd == 2)
