@@ -9,20 +9,23 @@
 //    그래야, 기반 클래스 타입으로 묶어서 사용할때
 //    해당 특징을 사용할수 있다.
 
+// 4. 기반 클래스 멤버 함수중, 파생클래스가 재정의(override) 하게 되는 함수는
+//    반드시 가상함수(virtual) 가 되어야 한다.
+
 class Shape
 {
 public:
-	void draw() { std::cout << "Draw Shape" << std::endl; }
+	virtual void draw() { std::cout << "Draw Shape" << std::endl; }
 };
 class Rect : public Shape
 {
 public:
-	void draw() { std::cout << "Draw Rect" << std::endl; }
+	virtual void draw() { std::cout << "Draw Rect" << std::endl; }
 };
 class Circle : public Shape
 {
 public:
-	void draw() { std::cout << "Draw Circle" << std::endl; }
+	virtual void draw() { std::cout << "Draw Circle" << std::endl; }
 };
 int main()
 {
