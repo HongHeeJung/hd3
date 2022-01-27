@@ -1,6 +1,16 @@
 #include <iostream>
 #include <vector>
 
+// 1994년 4명의 개발자가 "당시 유행하던 유명한 코딩 스타일에 이름을 부여"
+
+// "디자인 패턴책" - 23개의 이름.
+// "GoF's Design Pattern" 책
+
+// prototype pattern :  clone()가상함수를 만드는 기법에 붙인 이름.
+
+
+
+
 class Shape
 {
 	int color;
@@ -66,6 +76,15 @@ int main()
 		int cmd;
 		std::cin >> cmd;
 
+		// 1. 객체의 생성과정을 OCP를 만족하게 할수 없을까 ?
+		//    => "추상 팩토리" 패턴을 알면 할수 있습니다.
+		// 
+		// 2. Undo/Redo 를 하려면 어떻게 해야할까요 ?
+		//    => Command 패턴을 알면 할수 있습니다
+
+		// 즉, "전형적인 어떤일을 하고 싶다" => 그작업을 수행하는 전형적인 코드가 존재합니다.
+		//									이름도 부여 되어 있습니다.
+		//									"디자인 패턴"을 학습하면 됩니다.
 		if (cmd == 1)
 		{
 			Shape* p = new Rect;
