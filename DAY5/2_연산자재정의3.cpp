@@ -37,9 +37,13 @@ int main()
 	// 주장 1. private 을 접근하기에는 멤버가 좋지 않을까 ?
 	// 주장 2. 멤버로 안될때가 있다. 일관성을 위해 일반함수로 모두 통일하자.
 
-	Point p4 = p1 + p2; // 
-	Point p5 = p1 + 5;
-	Point p6 = 5  + p1;
+	// 아래 3줄을 멤버로 만든다고 생각해 보세요
+	Point p4 = p1 + p2; // p1.operator+(Point)
+	Point p5 = p1 + 5;  // p1.operator+(int)
+	Point p6 = 5  + p1; // 5.operator+(Point) 는 될수 없습니다.
+						// 즉, 이경우는 멤버 함수로 구현 안됩니다.
+						// 하지만
+						// operator+(int, Point)로 만들면 됩니다
 }
 
 
